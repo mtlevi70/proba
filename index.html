@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="...">
+    <meta name="copyright" content="...">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="kepek/logo/Untitled.png" type="image/x-icon">
+    <title>Co Lee ismertető</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+
+        function init() {
+            let hamMenu = document.querySelector('.ham_menu');
+            let nav = document.querySelector('nav');
+            let navbar = document.querySelector('.navbar');
+            let navbar_x = document.querySelector('.navbar_x');
+
+            hamMenu.addEventListener('click', function () {
+                nav.classList.toggle('visible');
+                navbar.classList.toggle('hidden');
+                navbar_x.classList.toggle('visible');
+            });
+
+            navbar_x.addEventListener('click', function () {
+                nav.classList.toggle('visible');
+                navbar_x.classList.toggle('visible');
+                navbar.classList.toggle('hidden');
+            });
+        }
+        
+        document.addEventListener("DOMContentLoaded", quotesfunc)
+
+        let currentIndex = 0;
+
+        function quotesfunc(){
+            const quotes = document.querySelectorAll(`.quote`);
+
+            for (var i = 0; i < quotes.length; i++) {
+                quotes[i].style.opacity = '0'; // Elrejtés
+                quotes[i].style.animation = 'none'; // Animáció leállítása
+            }
+            quotes[currentIndex].style.opacity = '1';
+            quotes[currentIndex].style.animation = `fade 6s ease-in-out`;
+            currentIndex++;
+            if (currentIndex >=quotes.length){
+                currentIndex = 0;
+            }
+            
+        }
+        setInterval(quotesfunc, 6000);
+        
+        
+        
+            
+        
+    </script>   
+</head>
+<body>
+    <header>
+        <div class = "navbar">
+            <div class="ham_menu">
+                <div class="bars"></div>
+                <div class="bars"></div>
+                <div class="bars"></div>
+            </div>
+        </div>
+        <div class = "navbar_x">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+        <a href="index.html"><img class = "logo" src ="kepek/logo/colee_logo.png" alt="Co Lee logó"></a>
+    </header>
+    <nav>
+        <ul>
+            <li>pop</li>
+                <ul>
+                    <li>fasz</li>
+                </ul>
+            <li>alt</li>
+            <li>rock</li>
+            <li>rap</li>
+        </ul>
+    </nav>
+    
+    <article>
+        <div class = "slider">
+            <div class = "slides">
+                <img src="kepek/minden/simakolos.jpg">
+                <img src="kepek/minden/colee_blaize.jpg">
+                <img src="kepek/minden/cirquekoncert.jpg">
+                <img src="kepek/minden/borondkis.jpg">
+            </div>
+            <div class = "slides">
+                <img src="kepek/minden/simakolos.jpg">
+                <img src="kepek/minden/colee_blaize.jpg">
+                <img src="kepek/minden/cirquekoncert.jpg">
+                <img src="kepek/minden/borondkis.jpg">
+            </div>
+        </div>
+        <div class ="quotes">
+            
+            <div class="quote">
+                <p>"Apám őrjöngő ökle vagyok<br>
+                    Én és a fal, mikor eggyé váltak,<br>
+                    ha csak egy percig is<br>
+                    Anyám törékeny szíve vagyok"</p>
+                <p class="title">- HARCOSOK KLUBJA</p>
+            </div>
+            <div class="quote">
+                <p>"Egyedül Budapesten,<br>
+                    hogy lett olyan egyszerű tétel a távolság"</p>
+                <p class="title">- EGYEDÜL BUDAPESTEN</p>
+            </div>
+            <div class="quote">
+                <p>"Teagőz és cigifüst<br>
+                    Ezek mögött is te vagy<br>
+                    Mint a hegyek mögött istenek<br>
+                    A kövek között is te laksz"</p>
+                <p class="title">- UKG TEA</p>
+            </div>
+            <div class="quote">
+                <p>"Bilincs a lábékszer,<br>
+                    a tenger hullámokkal csókol partot<br>
+                    Vajon hová vész el<br>
+                    Vajon hová nézel, amikor nem rám"</p>
+                <p class="title">- PÁNCÉLSZEKRÉNY</p>
+            </div>
+            <div class="quote">
+                <p>"Mert ez egy gyönyörű reggel<br>
+                    Ujjal tartom a napfényt<br>
+                    Ahogy csillog a tested, <br>
+                    mint a csillagok este"
+                    </p>
+                <p class="title">-GYÖNYÖRŰ REGGEL</p>
+            </div>
+            <div class="quote">
+                <p>"Nem kell a koronadísz, csak várak,hegyek <br>
+                    és marad a highness<br>
+                    Egy kenuban születtem én,<br>
+                    a sírom egy katamarán lesz"
+                    </p>
+                <p class="title">-BŐRÖNDKÍSÉRŐ</p>
+            </div>
+            <div class="quote">
+                <p>"Nálam tágas a táska, nem váltok más avatárra<br>
+                    A lövészeim tudják nálam más van a tárban"
+                    </p>
+                <p class="title">- OLYAN VAGYOK
+                </p>
+            </div>
+            <div class="quote">
+                <p>"Mint a száradó aszfalt, én olyan vagyok
+                    Bennem a mindennek lenyomata"</p>
+                <p class="title">- OLYAN VAGYOK</p>
+            </div>
+        </div>
+        <div class ="genre">
+            
+            <div class ="pop">
+                <a href="pop.html"><h2>Pop</h2></a>
+                    <figure>
+                        <a href="pop.html"><img src ="kepek/index/cica.jpg" alt="asd" width = "100%"></a>
+                        <figcaption>cica 2015-ben</figcaption>
+                    </figure>
+                </a>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quaerat culpa, id repellat reprehenderit aliquid natus cupiditate adipisci quidem consectetur numquam nam minima quos, beatae officia, eaque necessitatibus accusantium eveniet.</p>
+            </div>
+            
+            <div class ="alt">
+                <a href="alt.html"><h2>Alternatív</h2></a>
+                    <figure>
+                        <a href="alt.html"><img src ="kepek/index/cica.jpg" alt="asd" width = "100%"></a>
+                        <figcaption>cica 2015-ben</figcaption>
+                    </figure>
+                </a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quasi facere? Omnis quibusdam saepe, iusto culpa facere facilis, amet ducimus porro sapiente enim doloremque harum nam suscipit. Quae, asperiores laboriosam!</p>
+            </div>
+            
+            <div class ="rock">
+                <a href="rock.html"><h2>Rock</h2></a>
+                    <figure>
+                        <a href="rock.html"><img src ="kepek/index/cica.jpg" alt="asd" width = "100%"></a>
+                        <figcaption>cica 2015-ben</figcaption>
+                    </figure>
+                </a>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore temporibus sed maxime pariatur, explicabo voluptatibus quo perspiciatis enim ducimus molestiae. Aut deleniti tenetur perferendis aperiam laborum atque iusto animi!</p>
+            </div>
+            
+            <div class ="rap">
+                <a href="rap.html"><h2>Rap</h2></a>
+                    <figure>
+                        <a href="rap.html"><img src ="kepek/index/cica.jpg" alt="asd" width = "100%"></a>
+                        <figcaption>cica 2015-ben</figcaption>
+                    </figure>
+                </a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repellat error blanditiis, corporis a animi laudantium odio excepturi, quasi officia quas soluta at totam debitis id ipsa officiis ducimus? Labore.</p>
+            </div>
+
+        </div>
+    </article>
+
+    <aside>
+
+    </aside>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+
+<script>
+</script>
+
+</html>
